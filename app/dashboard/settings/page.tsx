@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Camera, User, Mail, Phone, MapPin, Briefcase } from "lucide-react";
+import Image from "next/image";
 
 const Page = () => {
   const [profileImage, setProfileImage] = useState<string | null>(null);
@@ -53,13 +54,13 @@ const Page = () => {
             <div className="relative">
               <div className="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                 {profileImage ? (
-                  <img
+                  <Image
                     src={profileImage}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <img
+                  <Image
                     src="/user1.png"
                     alt="Profile"
                     className="w-full h-full "
@@ -121,7 +122,7 @@ const Page = () => {
             {/* caption */}
             <div>
               <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                <Briefcase  className="w-4 h-4" />
+                <Briefcase className="w-4 h-4" />
                 Caption
               </label>
               <input

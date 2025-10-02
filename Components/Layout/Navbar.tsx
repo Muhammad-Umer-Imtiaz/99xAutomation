@@ -27,13 +27,13 @@ const Navbar = () => {
         {/* Profile */}
         <div className="flex items-center gap-3">
           {profileImage ? (
-            <img
+            <Image
               src={profileImage}
               alt="Profile"
               className="w-12 h-12 object-cover"
             />
           ) : (
-            <img src="/user1.png" alt="Profile" className="w-12 h-12 " />
+            <Image src="/user1.png" alt="Profile" className="w-12 h-12 " />
           )}
 
           <div className="flex flex-col items-center">

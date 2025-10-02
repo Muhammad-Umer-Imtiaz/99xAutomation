@@ -9,6 +9,7 @@ import {
   X,
 } from "lucide-react";
 import { Mic } from "lucide-react";
+import Image from "next/image";
 import React, { useState } from "react";
 import { HexColorPicker } from "react-colorful";
 
@@ -230,7 +231,7 @@ export default function Step2Train({ formData, onChange }: any) {
               style={{ backgroundColor: formData.primaryColor || "#8D27FF" }}
             >
               {formData.logo ? (
-                <img
+                <Image
                   src={formData.logo}
                   alt="logo"
                   className="w-12 h-12 object-cover rounded-full"
