@@ -1,9 +1,11 @@
 "use client";
 
-import { Paperclip, Settings } from "lucide-react";
-import React from "react";
+import { FileText, Paperclip, Settings, Upload, X } from "lucide-react";
+import React, { useState } from "react";
 
 export default function Step2Train({ formData, onChange }: any) {
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -82,31 +84,51 @@ export default function Step2Train({ formData, onChange }: any) {
           </div>
 
           {/* Attach Document */}
-          <div className="flex flex-col mt-4">
-            <h2 className="text-xl font-semibold">Documents</h2>
-            <p className="text-sm text-[#555555]">
-              Attach PDF, DOC, TXT files for chatbot knowledge base.
-            </p>
+          <div className="flex mt-4">
+            <div>
+              {" "}
+              <h2 className="text-xl font-semibold">Documents</h2>
+              <p className="text-sm text-[#555555]">
+                Attach PDF, DOC, TXT files for chatbot knowledge base.
+              </p>
+            </div>
             <div className="w-2/4 mt-3">
-              <input
-                id="documentUpload"
-                type="file"
-                accept=".pdf,.doc,.docx,.txt"
-                onChange={(e) => {
-                  if (e.target.files && e.target.files[0]) {
-                    const file = e.target.files[0];
-                    onChange("documents", file); // just like formData.logo
-                  }
-                }}
-                className="hidden"
-              />
-              <label
-                htmlFor="documentUpload"
-                className="flex items-center gap-2 cursor-pointer py-2 px-4 rounded-full bg-[#8D27FF] text-white font-medium hover:bg-[#6f1fcc] transition"
-              >
-                <Paperclip className="w-8 h-8 p-1 mr-6 ml-2 bg-white rounded-full text-[#8D27FF]" />
-                <span>Attach Document</span>
-              </label>
+              {!uploadedFile ? (
+                <label className="border rounded px-4 py-3 flex items-center gap-3 cursor-pointer hover:bg-gray-50 transition">
+                  <Upload className="w-5 h-5 text-gray-600" />
+                  <span className="text-gray-700">Upload your file</span>
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx,.txt"
+                    className="hidden"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) {
+                        setUploadedFile(file);
+                        onChange("documents", file); // Stores in formData.documents
+                      }
+                    }}
+                  />
+                </label>
+              ) : (
+                <div className="border rounded px-4 py-3 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-gray-600" />
+                    <span className="text-gray-700 text-sm">
+                      {uploadedFile.name}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setUploadedFile(null);
+                      onChange("documents", null); // Clears formData.documents
+                    }}
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

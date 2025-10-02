@@ -18,7 +18,8 @@ export default function Step2Train({ formData, onChange }: any) {
   );
   const [position, setPosition] = useState(formData.position || "right");
   const [open, setOpen] = useState(true);
-   const [voiceActive, setVoiceActive] = useState(false);
+  const [voiceActive, setVoiceActive] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -69,7 +70,6 @@ export default function Step2Train({ formData, onChange }: any) {
             value={formData.botType}
             onChange={(e) => onChange("botType", e.target.value)}
           >
-            <option value="">Select a bot type</option>
             <option value="chatbot">Chatbot</option>
             <option value="voicebot">Voice Bot</option>
             <option value="both">Voice & Text (Both)</option>
@@ -80,7 +80,7 @@ export default function Step2Train({ formData, onChange }: any) {
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-semibold">Color Scheme</h2>
           <p className="text-sm text-[#555555]">
-            Select your chatbot’s primary and secondary colors.
+            Select your chatbot's primary and secondary colors.
           </p>
 
           <div className="mb-4">
@@ -214,7 +214,7 @@ export default function Step2Train({ formData, onChange }: any) {
         {/* Chat Window with animation */}
         {open && (
           <div
-            className={`mb-3 h-100 rounded-3xl shadow-lg border flex flex-col transform transition-all duration-300 ease-in-out ${
+            className={`mb-3 h-100 w-70 rounded-3xl shadow-lg border flex flex-col transform transition-all duration-300 ease-in-out ${
               open
                 ? "opacity-100 scale-100 translate-y-0"
                 : "opacity-0 scale-95 translate-y-5"
@@ -247,14 +247,21 @@ export default function Step2Train({ formData, onChange }: any) {
                 </span>
               </div>
             </div>
+
             {/* Messages */}
             {formData.botType === "voicebot" && (
               <div className="flex-1 p-3 text-sm flex items-center justify-center">
-                <button className="w-16 h-16 rounded-full bg-[#8D27FF] flex items-center justify-center shadow-lg hover:bg-[#6f1fcc] transition">
-                  <AudioLines className="w-8 h-8 text-white" />
+                <button
+                  className="flex items-center justify-center w-20 h-20 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse"
+                  style={{
+                    backgroundColor: formData.primaryColor || "#8D27FF",
+                  }}
+                >
+                  <AudioLines className="w-10 h-10 text-white" />
                 </button>
               </div>
             )}
+
             {formData.botType === "chatbot" && (
               <div className="flex-1 p-3 text-sm overflow-y-auto">
                 <div className="mb-2">
@@ -264,7 +271,7 @@ export default function Step2Train({ formData, onChange }: any) {
                 </div>
                 <div className="mb-2 text-right">
                   <p
-                    className="p-2 rounded shadow inline-block text-white"
+                    className="p-2 rounded shadow inline-block text-white w-2/3 text-left"
                     style={{
                       backgroundColor: formData.primaryColor || "#8D27FF",
                     }}
@@ -274,100 +281,132 @@ export default function Step2Train({ formData, onChange }: any) {
                 </div>
               </div>
             )}
+
             {formData.botType === "both" && (
-              <div className="flex-1 p-3 text-sm overflow-y-auto">
-                {/* User text */}
-                <div className="mb-2">
-                  <p className="bg-white p-2 rounded shadow inline-block">
-                    Hi, I’d like to ask something.
-                  </p>
-                </div>
+              <>
+                {!voiceActive ? (
+                  // Chat mode
+                  <div className="flex-1 p-3 text-sm overflow-y-auto">
+                    {/* User text */}
+                    <div className="mb-2">
+                      <p className="bg-white p-2 rounded shadow inline-block">
+                        Hi, I'd like to ask something.
+                      </p>
+                    </div>
 
-                {/* Bot response */}
-                <div className="mb-2 text-right">
-                  <p
-                    className="p-2 rounded shadow inline-block text-white"
-                    style={{
-                      backgroundColor: formData.primaryColor || "#8D27FF",
-                    }}
-                  >
-                    I can answer your text queries or listen via voice 🎤
-                  </p>
-                </div>
-
-                {/* Mic button in the middle */}
-                <div className="flex justify-center mt-4">
-                  <button className="w-14 h-14 rounded-full bg-[#8D27FF] flex items-center justify-center shadow-md hover:bg-[#6f1fcc] transition">
-                    <Mic className="w-6 h-6 text-white" />
-                  </button>
-                </div>
-
-                {/* Typing indicator */}
-                <div className="flex justify-start mt-4 gap-1">
-                  <span className="w-2 h-2 bg-[#8D27FF] rounded-full animate-bounce"></span>
-                  <span className="w-2 h-2 bg-[#8D27FF] rounded-full animate-bounce [animation-delay:-.2s]"></span>
-                  <span className="w-2 h-2 bg-[#8D27FF] rounded-full animate-bounce [animation-delay:-.4s]"></span>
-                </div>
-              </div>
+                    {/* Bot response */}
+                    <div className="mb-2 text-right">
+                      <p
+                        className="p-2 rounded shadow inline-block text-white text-left w-2/3"
+                        style={{
+                          backgroundColor: formData.primaryColor || "#8D27FF",
+                        }}
+                      >
+                        I can answer your text queries or listen via voice
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  // Voice mode (like voicebot)
+                  <div className="flex-1 p-3 text-sm flex items-center justify-center">
+                    <button
+                      className="flex items-center justify-center w-20 h-20 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse"
+                      style={{
+                        backgroundColor: formData.primaryColor || "#8D27FF",
+                      }}
+                    >
+                      <AudioLines className="w-10 h-10 text-white" />
+                    </button>
+                  </div>
+                )}
+              </>
             )}
+
             {/* Input box */}
-           {/* Input box */}
             <div
-              className="px-3 py-2 flex items-center justify-center gap-4  rounded-b-3xl"
+              className="px-3 py-2 flex items-center justify-center gap-4 rounded-b-3xl"
               style={{ backgroundColor: formData.primaryColor || "#8D27FF" }}
             >
-              {formData.botType === "voicebot" ? (
-                <button
-                  className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse"
-                  style={{
-                    backgroundColor: "white",
-                  }}
-                >
-                  <AudioLines
-                    className="w-7 h-7"
-                    style={{ color: formData.primaryColor || "#8D27FF" }}
-                  />
-                </button>
-              ) : (
+              {/* VOICEBOT MODE (No footer controls, only center mic) */}
+              {formData.botType === "voicebot" && null}
+
+              {/* CHATBOT MODE (Input + Send button) */}
+              {formData.botType === "chatbot" && (
                 <div className="flex items-center gap-2 bg-white rounded-full px-3 py-1 w-full max-w-lg">
                   <input
                     type="text"
                     placeholder="Type your message..."
                     className="flex-1 min-w-0 px-2 py-1 rounded-full outline-none"
                   />
+                  <button
+                    className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full"
+                    style={{
+                      backgroundColor: formData.primaryColor || "#8D27FF",
+                    }}
+                  >
+                    <Send className="w-5 h-5 text-white" />
+                  </button>
+                </div>
+              )}
 
-                  {formData.botType === "chatbot" && (
-                    <button
-                      className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full "
-                      style={{
-                        backgroundColor: formData.primaryColor || "#8D27FF",
-                      }}
-                    >
-                      <Send className="w-5 h-5 text-white" />
-                    </button>
-                  )}
-
-                  {formData.botType === "both" && (
-                    <>
+              {/* BOTH MODE (switch between chat + voice) */}
+              {formData.botType === "both" && (
+                <>
+                  {!voiceActive ? (
+                    // Normal input + Send + Mic (mic only shows when input is empty)
+                    <div className="flex items-center gap-2 bg-white rounded-full px-3 py-1 w-full max-w-lg">
+                      <input
+                        type="text"
+                        placeholder="Type your message..."
+                        className="flex-1 min-w-0 px-2 py-1 rounded-full outline-none"
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                      />
+                      {/* Send */}
                       <button
-                        className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full "
+                        className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full"
                         style={{
                           backgroundColor: formData.primaryColor || "#8D27FF",
                         }}
                       >
                         <Send className="w-5 h-5 text-white" />
                       </button>
+                      {/* Mic - only show when input is empty */}
+                      {inputValue.trim() === "" && (
+                        <button
+                          onClick={() => setVoiceActive(true)}
+                          className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full"
+                          style={{
+                            backgroundColor: formData.primaryColor || "#8D27FF",
+                          }}
+                        >
+                          <AudioLines className="w-5 h-5 text-white" />
+                        </button>
+                      )}
+                    </div>
+                  ) : (
+                    // Voicebot active screen (Mic + X button)
+                    <div className="flex justify-center items-center gap-4 w-full">
                       <button
-                        className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full "
+                        className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse"
                         style={{
                           backgroundColor: formData.primaryColor || "#8D27FF",
                         }}
                       >
-                        <AudioLines className="w-5 h-5 text-white" />
+                        <AudioLines className="w-7 h-7 text-white" />
                       </button>
-                    </>
+                      <button
+                        onClick={() => setVoiceActive(false)}
+                        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:scale-110 transition-transform duration-200"
+                      >
+                        <X
+                          className="w-6 h-6"
+                          style={{ color: formData.primaryColor || "#8D27FF" }}
+                        />
+                      </button>
+                    </div>
                   )}
-                </div>
+                </>
               )}
             </div>
           </div>

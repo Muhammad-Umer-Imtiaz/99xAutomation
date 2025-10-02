@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Search, Bell } from "lucide-react";
 import Image from "next/image";
 
 const Navbar = () => {
+  const [profileImage, setProfileImage] = useState<string | null>(null);
+
   return (
     <header className="h-16 shadow-md flex items-center justify-between px-6 py-4">
       {/* Logo / Title */}
@@ -24,13 +26,15 @@ const Navbar = () => {
 
         {/* Profile */}
         <div className="flex items-center gap-3">
-          <Image
-            src="/profile.jpeg"
-            alt="Profile"
-            width={40}
-            height={40}
-            className="rounded-full object-cover"
-          />
+          {profileImage ? (
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="w-12 h-12 object-cover"
+            />
+          ) : (
+            <img src="/user1.png" alt="Profile" className="w-12 h-12 " />
+          )}
 
           <div className="flex flex-col items-center">
             <span className="text-sm font-medium">Amelia</span>
