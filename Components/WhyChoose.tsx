@@ -27,7 +27,7 @@ const WhyChoose = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // ✅ sirf ye
+        staggerChildren: 0.3,
       },
     },
   };
@@ -39,7 +39,7 @@ const WhyChoose = () => {
       x: 0,
       transition: {
         duration: 1,
-        ease: "easeInOut",
+        ease: [0.42, 0, 0.58, 1] as [number, number, number, number], // 👈 cubic bezier easeInOut
       },
     },
   };
@@ -51,7 +51,7 @@ const WhyChoose = () => {
         <motion.h2
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
           viewport={{ amount: 0.3 }}
           className="text-5xl text-[#8C25FF] font-bold text-center mb-16"
         >
@@ -86,7 +86,7 @@ const WhyChoose = () => {
             <motion.h3
               initial={{ y: -30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
               className="text-[#8C25FF] font-semibold text-5xl"
             >
@@ -130,7 +130,7 @@ const WhyChoose = () => {
           <MotionImage
             initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
             viewport={{ once: true }}
             src="/WhyCHoose.png"
             alt="Why Choose Us"
