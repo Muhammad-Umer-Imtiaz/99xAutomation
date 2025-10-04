@@ -6,7 +6,10 @@
   max-width: 100% !important;
 }
 
-
-html, body {
+html,
+body {
   font-family: "Outfit", sans-serif !important;
+}
+html {
+  scroll-behavior: smooth;
 }

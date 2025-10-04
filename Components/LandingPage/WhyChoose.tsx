@@ -47,7 +47,7 @@ const WhyChoose = () => {
   return (
     <div>
       {/* Companies and clients who trust 99X */}
-      <div className="overflow-hidden relative w-full bg-white py-10 mx-28">
+      <div className="overflow-hidden relative  bg-white py-10 mx-28">
         <motion.h2
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -57,16 +57,22 @@ const WhyChoose = () => {
         >
           Companies and clients who trust 99X
         </motion.h2>
-
-        <motion.div
-          className="flex gap-12"
-          animate={{ x: ["-100%", "100%"] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-        >
-          {logos.concat(logos).map((logo, i) => (
-            <img key={i} src={logo} alt={`Logo ${i}`} className="h-12 w-auto" />
-          ))}
-        </motion.div>
+        <div className="relative w-full overflow-hidden">
+          <motion.div
+            className="flex gap-12"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          >
+            {logos.concat(logos).map((logo, i) => (
+              <img
+                key={i}
+                src={logo}
+                alt={`Logo ${i}`}
+                className="h-12 w-auto"
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* Why Choose 99x */}

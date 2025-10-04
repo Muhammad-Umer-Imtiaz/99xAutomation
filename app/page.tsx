@@ -1,6 +1,8 @@
-import HeroSection from "@/Components/HeroSection";
-import Navbar from "@/Components/Navbar";
-import WhyChoose from "@/Components/WhyChoose";
+import ChatbotBuilder from "@/Components/LandingPage/ChatbotBuilder";
+import HeroSection from "@/Components/LandingPage/HeroSection";
+import Industries from "@/Components/LandingPage/Industries";
+import Navbar from "@/Components/LandingPage/Navbar";
+import WhyChoose from "@/Components/LandingPage/WhyChoose";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <WhyChoose />
+      <ChatbotBuilder/>
+      <Industries/>
     </div>
   );
 }
