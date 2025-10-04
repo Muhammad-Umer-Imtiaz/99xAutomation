@@ -1,7 +1,13 @@
+import HeroSection from "@/Components/HeroSection";
+import Navbar from "@/Components/Navbar";
+import WhyChoose from "@/Components/WhyChoose";
 
 export default function Home() {
   return (
-    
-    <div className="text-teal-500 text-3xl text-center">Hello World</div>
+    <div className="">
+      <Navbar />
+      <HeroSection />
+      <WhyChoose />
+    </div>
   );
 }

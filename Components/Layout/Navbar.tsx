@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { Search, Bell } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [profileImage, setProfileImage] = useState<string | null>(null);
+  const navigate = useRouter();
 
   return (
     <header className="h-16 shadow-md flex items-center justify-between px-6 py-4">
@@ -25,7 +27,12 @@ const Navbar = () => {
         </button>
 
         {/* Profile */}
-        <div className="flex items-center gap-3">
+        <div
+          className="flex items-center gap-3"
+          onClick={() => {
+            navigate.push("/dashboard/settings");
+          }}
+        >
           {profileImage ? (
             <Image
               src={profileImage}
@@ -33,7 +40,13 @@ const Navbar = () => {
               className="w-12 h-12 object-cover"
             />
           ) : (
-            <Image src="/user1.png" alt="Profile" className="w-12 h-12 " />
+            <Image
+              src="/user1.png"
+              alt="Profile"
+              width={12}
+              height={12}
+              className="w-12 h-12 "
+            />
           )}
 
           <div className="flex flex-col items-center">

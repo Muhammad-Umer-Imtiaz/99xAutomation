@@ -207,6 +207,7 @@ export default function Step2Train({ formData, onChange }: any) {
       </div>
 
       {/* ------- Right Side: Chatbot Preview ------- */}
+
       <div
         className={`fixed bottom-5 flex flex-col ${
           position === "right" ? "items-end right-10" : "items-start left-10"
@@ -388,14 +389,6 @@ export default function Step2Train({ formData, onChange }: any) {
                   ) : (
                     // Voicebot active screen (Mic + X button)
                     <div className="flex justify-center items-center gap-4 w-full">
-                      <button
-                        className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse"
-                        style={{
-                          backgroundColor: formData.primaryColor || "#8D27FF",
-                        }}
-                      >
-                        <AudioLines className="w-7 h-7 text-white" />
-                      </button>
                       <button
                         onClick={() => setVoiceActive(false)}
                         className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:scale-110 transition-transform duration-200"
