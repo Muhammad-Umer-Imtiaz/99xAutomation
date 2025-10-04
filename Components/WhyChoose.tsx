@@ -27,16 +27,21 @@ const WhyChoose = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        duration: 1,
-        ease: "easeInOut",
+        staggerChildren: 0.3, // ✅ sirf ye
       },
     },
   };
 
   const item = {
     hidden: { opacity: 0, x: -40 },
-    show: { opacity: 1, x: 0 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
