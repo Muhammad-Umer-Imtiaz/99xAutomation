@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   const MotionImage = motion(Image);
   return (
-    <div className="flex pt-20 gap-10 mx-28">
+    <div className="flex pt-52 gap-10 mx-28">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

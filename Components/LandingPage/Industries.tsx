@@ -117,8 +117,8 @@ const Industries = () => {
   return (
     <div className="mx-28 my-20 space-y-10">
       <motion.h2
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
         className="text-5xl text-[#8C25FF] font-bold text-center mb-6"
@@ -127,8 +127,8 @@ const Industries = () => {
       </motion.h2>
       <p className="text-base text-[#000000] text-center mb-16">
         From ecommerce to healthcare, 99X AI Chatbot adapts to every industry —
-        delivering faster support, smarter automation, and better customer
-        experiences.
+        delivering faster support,
+        <br /> smarter automation, and better customer experiences.
       </p>
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
@@ -143,10 +143,10 @@ const Industries = () => {
             >
               <Icon className="w-16 h-16 p-4 text-white rounded-full bg-[#8C25FF] mt-4" />
               <div className="text-center">
-                <h4 className="text-xl font-semibold text-[#000000] mb-3">
+                <h4 className="text-base font-medium text-[#000000] mb-3">
                   {item.heading}
                 </h4>
-                <p className="text-[#000000]">{item.text}</p>
+                <p className="text-[#000000] text-xs">{item.text}</p>
               </div>
             </motion.div>
           );
