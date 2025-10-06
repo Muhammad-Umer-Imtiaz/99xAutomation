@@ -7,6 +7,7 @@ import Industries from "@/Components/LandingPage/Industries";
 import Navbar from "@/Components/LandingPage/Navbar";
 import Performance from "@/Components/LandingPage/Performance";
 import Testimonial from "@/Components/LandingPage/Testimonial";
+import Try from "@/Components/LandingPage/Try";
 import WhyChoose from "@/Components/LandingPage/WhyChoose";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <WhyChoose />
       <ChatbotBuilder />
+      <Try />
       <Industries />
       <Testimonial />
       <Performance />
