@@ -2,11 +2,12 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaPlay } from "react-icons/fa";
 
 const HeroSection = () => {
   const MotionImage = motion(Image);
   return (
-    <div className="flex pt-52 gap-10 mx-28">
+    <div id="home" className="relative flex pt-52  gap-10 px-28">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -30,6 +31,7 @@ const HeroSection = () => {
           </button>
           <button className="rounded-full bg-white text-xl px-12 py-4 text-[#000000B3] shadow-lg shadow-black/50 hover:shadow-black/70 transition">
             Watch demo
+            <FaPlay className="inline ml-3 w-5 h-5"/> 
           </button>
         </div>
       </motion.div>
@@ -43,6 +45,11 @@ const HeroSection = () => {
         height={300}
         className="rounded-lg ml-16"
         priority
+      />
+      <img
+        src="/bgHero.png"
+        alt="Background of hero Section"
+        className="absolute top-0 right-0"
       />
     </div>
   );

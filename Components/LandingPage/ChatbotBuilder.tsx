@@ -50,7 +50,7 @@ const ChatbotBuilder = () => {
     },
   ];
   return (
-    <div className="mx-28 my-20 space-y-10">
+    <div id="features" className="mx-28 my-20 space-y-10 scroll-mt-32">
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -58,11 +58,12 @@ const ChatbotBuilder = () => {
         viewport={{ amount: 0.3 }}
         className="text-5xl text-[#8C25FF] font-bold text-center mb-6"
       >
-        Companies and clients who trust 99X
+        Everything You Need in One Chatbot Builder
       </motion.h2>
       <p className="text-base text-[#000000] text-center mb-16">
         Personalize your bot, launch it anywhere, track results in real-time,
-        and keep your business active <br /> 24/7 — all in one platform.
+        and keep your business <br />
+        active 24/7 — all in one platform.
       </p>
       {/* Cards */}
       <div className="grid grid-cols-3 gap-x-6 gap-y-14">
@@ -72,7 +73,7 @@ const ChatbotBuilder = () => {
             <motion.div
               key={item.id}
               className="px-6 py-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-4 "
-              whileHover={{ scale: 1.08}}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 1.1 }}
             >
               <Icon className="w-16 h-16 p-4 text-white rounded-full bg-[#8C25FF] mt-4" />

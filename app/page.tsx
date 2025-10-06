@@ -1,3 +1,4 @@
+import About from "@/Components/LandingPage/About";
 import ChatbotBuilder from "@/Components/LandingPage/ChatbotBuilder";
 import FAQS from "@/Components/LandingPage/FAQS";
 import FinalCTA from "@/Components/LandingPage/FinalCTA";
@@ -22,6 +23,7 @@ export default function Home() {
       <Testimonial />
       <Performance />
       <FAQS />
+      <About/>
       <FinalCTA />
       <Footer />
     </div>

@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className='className="w-full  py-8"'>{children}</body>
+      <body className='className="w-full py-8"'>{children}</body>
     </html>
   );
 }

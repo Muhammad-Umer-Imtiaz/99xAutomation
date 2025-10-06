@@ -48,7 +48,7 @@ const FAQS = () => {
   };
 
   return (
-    <div className="py-10">
+    <div className="py-10 scroll-mt-20" id="faqs">
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
