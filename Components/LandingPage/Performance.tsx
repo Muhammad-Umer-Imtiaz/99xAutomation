@@ -11,19 +11,19 @@ const Performance = () => {
       para: "No manual effort needed — AI handles it all.",
     },
     {
-      id: 1,
+      id: 2,
       value: "60%",
       heading: "Support Cost Reduction",
       para: "Save more by replacing repetitive tasks with AI.",
     },
     {
-      id: 1,
+      id: 3,
       value: "3x",
       heading: "Faster Response Time",
       para: "Instant replies without keeping customers waiting.",
     },
     {
-      id: 1,
+      id: 4,
       value: "24/7",
       heading: "Always Available",
       para: "Round-the-clock support across all channels.",
@@ -46,16 +46,16 @@ const Performance = () => {
         <br /> and save more.
       </p>
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-14">
         {data.map((item) => {
           return (
             <motion.div
               key={item.id}
-              className="px-4 py-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-4"
+              className="px-3 pt-14 pb-10 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-4"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 1.1 }}
             >
-              <h3 className="text-[#8D27FF] text-5xl font-medium text-center mb-3">
+              <h3 className="text-[#8D27FF] text-5xl font-semibold text-center mb-3">
                 {item.value}
               </h3>
               <div className="text-center">

@@ -1,4 +1,7 @@
 import ChatbotBuilder from "@/Components/LandingPage/ChatbotBuilder";
+import FAQS from "@/Components/LandingPage/FAQS";
+import FinalCTA from "@/Components/LandingPage/FinalCTA";
+import Footer from "@/Components/LandingPage/Footer";
 import HeroSection from "@/Components/LandingPage/HeroSection";
 import Industries from "@/Components/LandingPage/Industries";
 import Navbar from "@/Components/LandingPage/Navbar";
@@ -12,10 +15,13 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <WhyChoose />
-      <ChatbotBuilder/>
-      <Industries/>
-      <Testimonial/>
-      <Performance/>
+      <ChatbotBuilder />
+      <Industries />
+      <Testimonial />
+      <Performance />
+      <FAQS />
+      <FinalCTA />
+      <Footer />
     </div>
   );
 }
