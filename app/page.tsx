@@ -4,6 +4,7 @@ import FAQS from "@/Components/LandingPage/FAQS";
 import FinalCTA from "@/Components/LandingPage/FinalCTA";
 import Footer from "@/Components/LandingPage/Footer";
 import HeroSection from "@/Components/LandingPage/HeroSection";
+import HowItWork from "@/Components/LandingPage/HowItWork";
 import Industries from "@/Components/LandingPage/Industries";
 import Navbar from "@/Components/LandingPage/Navbar";
 import Performance from "@/Components/LandingPage/Performance";
@@ -22,6 +23,7 @@ export default function Home() {
       <Industries />
       <Testimonial />
       <Performance />
+      <HowItWork/>
       <FAQS />
       <About/>
       <FinalCTA />
