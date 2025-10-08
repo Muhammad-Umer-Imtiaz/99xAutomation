@@ -30,7 +30,7 @@ const Performance = () => {
     },
   ];
   return (
-    <div className="mx-28 my-20 space-y-10">
+    <div className="px-28 py-20 space-y-10  bg-[#8D27FF33]">
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

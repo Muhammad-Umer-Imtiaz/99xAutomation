@@ -17,16 +17,23 @@ export default function Home() {
     <div className="">
       <Navbar />
       <HeroSection />
-      <WhyChoose />
+      <About />
       <ChatbotBuilder />
-      <Try />
+      <WhyChoose />
+      <HowItWork />
       <Industries />
       <Testimonial />
       <Performance />
-      <HowItWork/>
       <FAQS />
-      <About/>
-      <FinalCTA />
+
+      {/*
+      <Try />
+      
+  
+      
+    
+     
+      <FinalCTA /> */}
       <Footer />
     </div>
   );

@@ -25,22 +25,22 @@ const FAQS = () => {
     },
     { id: 4, question: "Q4. How secure is my data with 99X?", answer: "" },
     { id: 5, question: "Q5. Can 99X be trained for my industry?", answer: "" },
-    { id: 6, question: "Q6. Does 99X support multiple languages?", answer: "" },
-    {
-      id: 7,
-      question: "Q7. How fast can I deploy 99X for my business?",
-      answer: "",
-    },
-    {
-      id: 8,
-      question: "Q8. Can 99X handle payments or transactions?",
-      answer: "",
-    },
-    {
-      id: 9,
-      question: "Q9. Is there customer support if I face issues?",
-      answer: "hello",
-    },
+    // { id: 6, question: "Q6. Does 99X support multiple languages?", answer: "" },
+    // {
+    //   id: 7,
+    //   question: "Q7. How fast can I deploy 99X for my business?",
+    //   answer: "",
+    // },
+    // {
+    //   id: 8,
+    //   question: "Q8. Can 99X handle payments or transactions?",
+    //   answer: "",
+    // },
+    // {
+    //   id: 9,
+    //   question: "Q9. Is there customer support if I face issues?",
+    //   answer: "hello",
+    // },
   ];
 
   const toggle = (id: number) => {
@@ -48,7 +48,7 @@ const FAQS = () => {
   };
 
   return (
-    <div className="py-10 scroll-mt-20" id="faqs">
+    <div className="py-10 scroll-mt-28" id="faqs">
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
