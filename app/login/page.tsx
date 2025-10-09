@@ -70,22 +70,27 @@ export default function LoginPage() {
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full px-6 py-3 pl-8 bg-white backdrop-blur-sm rounded-full border-2 border-white/50 focus:outline-none transition-all shadow-md shadow-black placeholder-gray-500 mb-3"
+                className="w-full px-6 py-3 pl-8 bg-white backdrop-blur-sm rounded-full border-2 border-white/50 focus:outline-none transition-all shadow-md shadow-black placeholder-gray-500 "
               />
             </div>
 
             <p
-              className="text-[#FFFFFFB2] underline mb-2 text-right cursor-pointer"
+              className="text-[#FFFFFFB2] underline  hover:decoration-[#8D27FF] mb-2 text-right cursor-pointer"
               onClick={() => router.push("/forget-password")}
             >
               Forget Password?
             </p>
-
             <button
               onClick={handleSubmit}
-              className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-[1.02]"
+              className=" w-full  relative overflow-hidden px-12 py-4 rounded-full text-black text-xl font-medium border-2 border-[#8D27FF] bg-white transition-all duration-500 group hover:scale-105"
             >
-              Log in
+              {/* Small corner indicator - visible by default */}
+              <span className="absolute bottom-0 right-0 w-8 h-8 bg-[#8D27FF] rounded-tl-full transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:rounded-full"></span>
+
+              {/* Button text */}
+              <span className="relative z-10 text-[#8D27FF] font-medium  group-hover:text-white transition-colors duration-500">
+                Log In
+              </span>
             </button>
 
             <div className="text-center">

@@ -6,14 +6,7 @@ import Image from "next/image";
 const WhyChoose = () => {
   const MotionImage = motion(Image);
 
-  const logos = [
-    "/company1.png",
-    "/company2.png",
-    "/company3.png",
-    "/company4.png",
-    "/company5.png",
-    "/company6.png",
-  ];
+ 
 
   const list = [
     "99x makes chatbot building simple and fast. With our drag-and-drop tools you don’t need coding knowledge — just a few clicks and your bot is ready to go.",
@@ -47,33 +40,7 @@ const WhyChoose = () => {
   return (
     <div>
       {/* Companies and clients who trust 99X */}
-      <div className="overflow-hidden relative  bg-white py-10 mx-28">
-        <motion.h2
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
-          viewport={{ amount: 0.3 }}
-          className="text-5xl text-[#8C25FF] font-bold text-center mb-16"
-        >
-          Companies and clients who trust 99X
-        </motion.h2>
-        <div className="relative w-full overflow-hidden">
-          <motion.div
-            className="flex gap-12"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-          >
-            {logos.concat(logos).map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt={`Logo ${i}`}
-                className="h-12 w-auto"
-              />
-            ))}
-          </motion.div>
-        </div>
-      </div>
+    
 
       {/* Why Choose 99x */}
       <div className="relative w-full py-5 my-10 px-28 overflow-hidden">

@@ -26,12 +26,21 @@ const HeroSection = () => {
         </p>
 
         <div className="space-x-8 mt-5">
-          <button className="bg-gradient-to-l from-[#8D27FF] to-[#00CFFF] px-12 py-4 rounded-full text-white  text-xl   hover:from-[#7a1dcc] hover:to-[#00b8e6] transition ">
-            Start Free
-          </button>
+          <div className="group inline-block">
+            <button className="relative overflow-hidden px-12 py-4 rounded-full text-black text-xl font-medium border-2 border-[#8D27FF] bg-white transition-all duration-500 group hover:scale-105">
+              {/* Small corner indicator - visible by default */}
+              <span className="absolute bottom-0 right-0 w-8 h-8 bg-[#8D27FF] rounded-tl-full transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:rounded-full"></span>
+
+              {/* Button text */}
+              <span className="relative z-10 text-[#8D27FF] font-medium  group-hover:text-white transition-colors duration-500">
+                Start Free
+              </span>
+            </button>
+          </div>
+
           <button className="rounded-full bg-white text-xl px-12 py-4 text-[#000000B3] shadow-lg shadow-black/50 hover:shadow-black/70 transition">
             Watch demo
-            <FaPlay className="inline ml-3 w-5 h-5"/> 
+            <FaPlay className="inline ml-3 w-5 h-5" />
           </button>
         </div>
       </motion.div>

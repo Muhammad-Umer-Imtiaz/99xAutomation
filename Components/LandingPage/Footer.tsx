@@ -21,9 +21,9 @@ const Footer = () => {
           <input
             type="text"
             placeholder="Email Address"
-            className="px-6 py-2 w-80 rounded-full shadow-lg bg-white text-black shadow-[#00000080]"
+            className="px-6 py-2 w-80 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
           />
-          <button className=" inline bg-gradient-to-r from-[#6f25c4]  to-[#00CFFF]  shadow-[#00000080] shadow-lg px-10 py-2 rounded-full text-white text-xl hover:from-[#7a1dcc] hover:to-[#00b8e6] transition">
+          <button className=" inline px-8 py-2 text-xl rounded-full shadow-lg bg-white text-black  shadow-black/50 hover:shadow-black/90 transition">
             Subscribe
           </button>
         </div>

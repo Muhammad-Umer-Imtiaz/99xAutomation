@@ -128,9 +128,15 @@ export default function SignupPage() {
             {/* Submit Button */}
             <button
               onClick={handleSubmit}
-              className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-[1.02]"
+              className=" w-full  relative overflow-hidden px-12 py-4 rounded-full text-black text-xl font-medium border-2 border-[#8D27FF] bg-white transition-all duration-500 group hover:scale-105"
             >
-              Sign Up
+              {/* Small corner indicator - visible by default */}
+              <span className="absolute bottom-0 right-0 w-8 h-8 bg-[#8D27FF] rounded-tl-full transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:rounded-full"></span>
+
+              {/* Button text */}
+              <span className="relative z-10 text-[#8D27FF] font-medium  group-hover:text-white transition-colors duration-500">
+                Sign Up
+              </span>
             </button>
 
             {/* Already have account */}
@@ -140,7 +146,7 @@ export default function SignupPage() {
                 className="text-[#FFFFFFB2] mb-2 text-center cursor-pointer"
               >
                 Already have an account?{" "}
-                <span className="text-[#8D27FF] underline">Log in</span>
+                <span className="text-[#8D27FF] underline">Sign in</span>
               </Link>
             </div>
           </div>

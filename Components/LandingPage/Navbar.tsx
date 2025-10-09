@@ -59,7 +59,7 @@ const Navbar = () => {
         onClick={() => router.push("/login")}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="bg-white text-[#8D27FF] font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100 transition-all"
+        className="bg-white text-[#000] font-semibold px-6 py-2 rounded-full shadow-lg shadow-black/50 hover:shadow-black/90 hover:bg-gray-100 transition-all"
       >
         Login
       </motion.button>

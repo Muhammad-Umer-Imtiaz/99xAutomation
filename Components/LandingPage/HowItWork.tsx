@@ -96,8 +96,14 @@ const HowItWork = () => {
       </div>
 
       {/* Get Start Free Button*/}
-      <button className="bg-gradient-to-l block mx-auto mt-10 from-[#8D27FF] to-[#00CFFF] px-12 py-4 rounded-full text-white  text-xl   hover:from-[#7a1dcc] hover:to-[#00b8e6] transition ">
-        Get Start Free
+      <button className="relative block mt-10 mx-auto overflow-hidden px-12 py-4 rounded-full text-black text-xl font-medium border-2 border-[#8D27FF] bg-white transition-all duration-500 group hover:scale-105">
+        {/* Small corner indicator - visible by default */}
+        <span className="absolute bottom-0 right-0 w-8 h-8 bg-[#8D27FF] rounded-tl-full transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:rounded-full"></span>
+
+        {/* Button text */}
+        <span className="relative z-10 text-[#8D27FF] font-medium  group-hover:text-white transition-colors duration-500">
+          Get Start Free
+        </span>
       </button>
     </div>
   );
