@@ -17,11 +17,11 @@ const Footer = () => {
       {/* First Section */}
       <div className="flex flex-col md:flex-row gap-4 justify-between py-8 border-b-2 border-white">
         <Image src="/Logo.png" alt="Logo Image" width={100} height={70} />
-        <div className="md:space-x-6 space-x-2 flex">
+        <div className="md:space-x-6 space-x-1 flex">
           <input
             type="text"
             placeholder="Email Address"
-            className="px-6 py-2 lg:w-80 md:w-60 w-52 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
+            className="px-6 py-2 lg:w-80 md:w-60 w-48 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
           />
           <button className=" inline lg:px-8 px-4 py-2 sm:text-xl text-base rounded-full shadow-lg bg-white text-black  shadow-black/50 hover:shadow-black/90 transition">
             Subscribe
@@ -31,7 +31,7 @@ const Footer = () => {
       {/* Middle Section */}
       <div className="flex flex-col md:flex-row justify-between items-start py-10 text-sm">
         {/* Left side – Links (80%) */}
-        <ul className="md:w-9/12 w-full grid grid-rows-7 lg:grid-col-4 grid-cols-2 gap-y-6 lg:gap-x-6 gap-x-2 md:pb-1 pb-8 border-b md:border-r border-white font-bold">
+        <ul className="md:w-9/12 w-full hidden md:grid grid-rows-7 lg:grid-col-4 grid-cols-2 gap-y-6 lg:gap-x-6 gap-x-2 md:pb-1 pb-8 md:border-b-0 border-b md:border-r border-white font-bold">
           <li>Usefull Links</li>
           <li>Home</li>
           <li>Features</li>
