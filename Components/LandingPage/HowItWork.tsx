@@ -33,7 +33,7 @@ const HowItWork = () => {
   ];
 
   return (
-    <div className="py-20 relative">
+    <div className="py-20  lg:mx-28 md:mx-16 mx-8  relative">
       {/* Title */}
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
@@ -50,12 +50,12 @@ const HowItWork = () => {
       </p>
 
       {/* Steps Container */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-20 mx-10 md:mx-28 relative">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-20  relative">
         {steps.map((step, index) => (
           <div
             key={step.number}
             className={`relative flex flex-col items-center ${
-              index === 1 ? "md:-mt-30" : "md:mt-36"
+              index === 1 ? "lg:-mt-30" : "lg:mt-36"
             }`}
           >
             {/* Step Card */}
@@ -80,13 +80,13 @@ const HowItWork = () => {
                   <Image
                     src={ArrowRight}
                     alt="arrow right"
-                    className="hidden md:block absolute -top-10 left-54 translate-x-4 -translate-y-1/2 w-60 h-auto"
+                    className="hidden  lg:block absolute -top-10 left-54 translate-x-4 -translate-y-1/2 w-60 h-auto"
                   />
                 ) : (
                   <Image
                     src={ArrowDown}
                     alt="arrow down"
-                    className="hidden md:block absolute top-10 -right-84 -translate-x-1/2 mt-2 w-60 h-auto"
+                    className="hidden lg:block absolute top-10 -right-84 -translate-x-1/2 mt-2 w-60 h-auto"
                   />
                 )}
               </div>

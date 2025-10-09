@@ -30,20 +30,20 @@ const Performance = () => {
     },
   ];
   return (
-    <div className="px-28 py-20 space-y-10  bg-[#8D27FF33]">
+    <div className=" lg:px-28 md:px-16 px-8 lg:py-20 py-5 lg:space-y-10 space-y-3  bg-[#8D27FF33]">
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="text-5xl text-[#8C25FF] font-bold text-center mb-6"
+        className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center mb-6"
       >
         How 99X Adds Value to Your Business in Numbers
       </motion.h2>
-      <p className="text-base text-[#000000] text-center mb-16">
+      <p className="md:text-base text-sm text-[#000000] text-center mb-16">
         Our numbers speak for themselves — see how 99X helps companies scale
         faster, support smarter,
-        <br /> and save more.
+        <br className="hidden lg:block" /> and save more.
       </p>
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-14">

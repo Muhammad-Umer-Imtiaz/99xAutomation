@@ -13,25 +13,25 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="px-28 py-5 bg-[#8D27FF] text-white">
+    <div className=" lg:px-28 md:px-16 px-8 py-5 bg-[#8D27FF] text-white">
       {/* First Section */}
-      <div className="flex justify-between py-8 border-b-2 border-white">
+      <div className="flex flex-col md:flex-row gap-4 justify-between py-8 border-b-2 border-white">
         <Image src="/Logo.png" alt="Logo Image" width={100} height={70} />
-        <div className="space-x-6 flex">
+        <div className="md:space-x-6 space-x-2 flex">
           <input
             type="text"
             placeholder="Email Address"
-            className="px-6 py-2 w-80 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
+            className="px-6 py-2 lg:w-80 md:w-60 w-52 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
           />
-          <button className=" inline px-8 py-2 text-xl rounded-full shadow-lg bg-white text-black  shadow-black/50 hover:shadow-black/90 transition">
+          <button className=" inline lg:px-8 px-4 py-2 sm:text-xl text-base rounded-full shadow-lg bg-white text-black  shadow-black/50 hover:shadow-black/90 transition">
             Subscribe
           </button>
         </div>
       </div>
       {/* Middle Section */}
-      <div className="flex justify-between items-start py-10 text-sm">
+      <div className="flex flex-col md:flex-row justify-between items-start py-10 text-sm">
         {/* Left side – Links (80%) */}
-        <ul className="w-4/5 grid grid-rows-7 grid-flow-col gap-y-6 gap-x-6 border-r border-white font-bold">
+        <ul className="md:w-9/12 w-full grid grid-rows-7 lg:grid-col-4 grid-cols-2 gap-y-6 lg:gap-x-6 gap-x-2 md:pb-1 pb-8 border-b md:border-r border-white font-bold">
           <li>Usefull Links</li>
           <li>Home</li>
           <li>Features</li>
@@ -58,7 +58,7 @@ const Footer = () => {
         </ul>
 
         {/* Right side – Social links (20%) */}
-        <div className="w-1/5 flex flex-col gap-3 mt-4 items-start space-y-4 ml-10">
+        <div className="md:w-1/5 w-full flex flex-col gap-3 mt-4 items-start md:space-y-4 space-y-2 md:ml-10">
           <h3 className="font-semibold text-xl">Follow Us On</h3>
           <div className="flex gap-4 text-xl">
             <a href="#" target="_blank">

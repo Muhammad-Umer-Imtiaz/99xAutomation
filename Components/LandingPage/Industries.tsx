@@ -116,44 +116,45 @@ const Industries = () => {
     // },
   ];
   return (
-    <div className="px-28 py-20 space-y-10 bg-[#8D27FF33]">
+    <div className="lg:px-28 md:px-16 px-8 py-20 space-y-10 bg-[#8D27FF33]">
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="text-5xl text-[#8C25FF] font-bold text-center mb-6"
+        className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center mb-6"
       >
         Industries We Empower with AI
       </motion.h2>
-      <p className="text-base text-[#000000] text-center mb-16">
+      <p className="lg:text-base text-sm text-[#000000] text-center mb-16">
         From ecommerce to healthcare, 99X AI Chatbot adapts to every industry —
         delivering faster support,
-        <br /> smarter automation, and better customer experiences.
+        <br className="lg:hidden block" /> smarter automation, and better
+        customer experiences.
       </p>
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
         {data.map((item) => {
           const Icon = item.icon;
           return (
             <motion.div
               key={item.id}
-              className="px-6 py-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-4"
+              className="lg:px-6 px-2 py-3 lg:py-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col md:space-y-4 space-y-2"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 1.1 }}
             >
-              <Icon className="w-16 h-16 p-4 text-white rounded-full bg-[#8C25FF] mt-4" />
+              <Icon className="md:w-16 md:h-16 h-8 w-8 p-2 md:p-4 text-white rounded-full bg-[#8C25FF] md:mt-4 mt-1" />
               <div className="text-center">
-                <h4 className="text-base font-medium text-[#000000] mb-3">
+                <h4 className="text-base md:text-lg font-medium text-[#000000] md:mb-3 mb-1  ">
                   {item.heading}
                 </h4>
-                <p className="text-[#000000] text-xs">{item.text}</p>
+                <p className="text-[#000000] md:text-sm text-xs">{item.text}</p>
               </div>
             </motion.div>
           );
         })}
       </div>
-      <motion.h2
+      {/* <motion.h2
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
@@ -162,7 +163,7 @@ const Industries = () => {
       >
         Discover how 99X applies these use cases in your business
         <ArrowBigRight className="inline w-5 h-5 text-[#8C25FF] " />
-      </motion.h2>
+      </motion.h2> */}
     </div>
   );
 };

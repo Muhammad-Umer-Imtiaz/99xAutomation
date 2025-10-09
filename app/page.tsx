@@ -14,7 +14,7 @@ import WhyChoose from "@/Components/LandingPage/WhyChoose";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="w-full">
       <Navbar />
       <HeroSection />
       <About />

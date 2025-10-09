@@ -6,8 +6,6 @@ import Image from "next/image";
 const WhyChoose = () => {
   const MotionImage = motion(Image);
 
- 
-
   const list = [
     "99x makes chatbot building simple and fast. With our drag-and-drop tools you don’t need coding knowledge — just a few clicks and your bot is ready to go.",
     "Your chatbot can look and feel like part of your brand. Customize colors, logos, and welcome messages to create a seamless experience for your audience.",
@@ -40,10 +38,9 @@ const WhyChoose = () => {
   return (
     <div>
       {/* Companies and clients who trust 99X */}
-    
 
       {/* Why Choose 99x */}
-      <div className="relative w-full py-5 my-10 px-28 overflow-hidden">
+      <div className="relative w-full py-5 my-10  lg:px-28 md:px-16 px-8 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -53,15 +50,15 @@ const WhyChoose = () => {
         <div className="absolute inset-0 bg-white/60"></div>
 
         {/* Content */}
-        <div className="relative flex gap-8 mt-10 px-16">
+        <div className="relative lg:flex lg:gap-8 gap-12 mt-10 lg:px-16">
           {/* Left Section */}
-          <div className="space-y-5 flex-1">
+          <div className="lg:space-y-5 md:space-y-3 space-y-1 flex-1">
             <motion.h3
               initial={{ y: -30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
-              className="text-[#8C25FF] font-semibold text-5xl"
+              className="text-[#8C25FF] font-semibold lg:text-5xl md:text-3xl sm:text-2xl text-xl text-center lg:text-left"
             >
               Why Choose 99x?
             </motion.h3>
@@ -71,7 +68,7 @@ const WhyChoose = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-[#000000] text-base"
+              className="text-[#000000] lg:text-base text-sm block text-center lg:text-left"
             >
               Trusted AI automation to power conversations that matter.
             </motion.span>
@@ -87,11 +84,11 @@ const WhyChoose = () => {
               {list.map((text, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start gap-3 mt-3"
+                  className="flex items-start lg:gap-3 gap-2 lg:mt-3 mt-2"
                   variants={item}
                 >
                   <div className="w-1 h-1 mt-3 bg-black rounded-full flex-shrink-0"></div>
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-gray-700 lg:text-lg text-base leading-relaxed">
                     {text}
                   </p>
                 </motion.div>
@@ -109,7 +106,7 @@ const WhyChoose = () => {
             alt="Why Choose Us"
             width={600}
             height={600}
-            className="rounded-lg ml-16"
+            className="rounded-lg md:ml-16 lg:mt-0 mt-10 "
             priority
           />
         </div>

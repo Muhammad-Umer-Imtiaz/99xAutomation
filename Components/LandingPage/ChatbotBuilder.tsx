@@ -50,23 +50,26 @@ const ChatbotBuilder = () => {
     },
   ];
   return (
-    <div id="features" className="mx-28 my-20 space-y-10 scroll-mt-32">
+    <div
+      id="features"
+      className=" lg:mx-28 md:mx-16 mx-8 lg:my-20 space-y-10 scroll-mt-32"
+    >
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="text-5xl text-[#8C25FF] font-bold text-center mb-6"
+        className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center mb-6"
       >
         Everything You Need in One Chatbot Builder
       </motion.h2>
       <p className="text-base text-[#000000] text-center mb-16">
         Personalize your bot, launch it anywhere, track results in real-time,
-        and keep your business <br />
+        and keep your business <br className="md:block hidden" />
         active 24/7 — all in one platform.
       </p>
       {/* Cards */}
-      <div className="grid grid-cols-3 gap-x-6 gap-y-14">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-14">
         {data.map((item) => {
           const Icon = item.icon; // assign component
           return (
@@ -94,7 +97,7 @@ const ChatbotBuilder = () => {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="text-xl mt-4 text-[#8C25FF] font-bold text-center mb-6"
+        className="lg:text-xl md:text-lg text-base  mt-4 text-[#8C25FF] font-bold text-center mb-6"
       >
         Discover how 99X applies these use cases in your business
         <ArrowBigRight className="inline w-5 h-5 text-[#8C25FF] " />

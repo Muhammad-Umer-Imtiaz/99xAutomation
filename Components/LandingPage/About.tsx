@@ -40,13 +40,13 @@ const About = () => {
 
   return (
     <div>
-      <div className="overflow-hidden relative  bg-white py-10 mx-28">
+      <div className="overflow-hidden relative lg:pt-2 sm:pt-10 pt-20 sm:py-10 py-3 lg:mx-28 md:mx-16 mx-8">
         <motion.h2
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
           viewport={{ amount: 0.3 }}
-          className="text-5xl text-[#8C25FF] font-bold text-center mb-16"
+          className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center lg:mb-16 md:mb-10 mb-8"
         >
           Companies and clients who trust 99X
         </motion.h2>
@@ -61,7 +61,7 @@ const About = () => {
                 key={i}
                 src={logo}
                 alt={`Logo ${i}`}
-                className="h-12 w-auto"
+                className="sm:h-12 h-8 w-auto"
               />
             ))}
           </motion.div>
@@ -69,7 +69,7 @@ const About = () => {
       </div>
       <div
         id="about"
-        className="relative w-full scroll-mt-28 py-5 my-10 px-28 overflow-hidden "
+        className="relative w-full scroll-mt-28 py-5 lg:my-10 md:my-5 my-0 sm:px-28 px-8 overflow-hidden "
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -80,15 +80,15 @@ const About = () => {
         <div className="absolute inset-0 bg-white/60 "></div>
 
         {/* Content */}
-        <div className="relative flex  flex-row-reverse gap-8 mt-10 px-16">
+        <div className="relative lg:flex  lg:flex-row-reverse lg:gap-8 mt-10 lg:px-16">
           {/* Left Section */}
-          <div className="space-y-5 flex-1 ml-64 pt-14 ">
+          <div className="sm:space-y-5 space-y-3 flex-1 lg:ml-64 lg:pt-14 pt-4">
             <motion.h3
               initial={{ y: -30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
-              className="text-[#8C25FF] font-semibold text-5xl"
+              className="text-[#8C25FF] font-semibold lg:text-5xl md:text-4xl sm:text-3xl text-2xl"
             >
               About 99xAutomationAI
             </motion.h3>{" "}
@@ -112,7 +112,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
-              className="text-[#000000] font-semibold text-xl"
+              className="text-[#000000] font-semibold sm:text-xl text-lg"
             >
               Create. Customize. Automate.
             </motion.h5>
@@ -128,7 +128,7 @@ const About = () => {
             alt="99x Automation AI Robot"
             width={150}
             height={150}
-            className="rounded-lg ml-16"
+            className="rounded-lg ml-16 lg:block hidden"
             priority
           />
         </div>

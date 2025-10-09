@@ -48,13 +48,13 @@ const FAQS = () => {
   };
 
   return (
-    <div className="py-10 scroll-mt-28" id="faqs">
+    <div className="md:py-10 py-3 lg:px-28 md:px-16 px-8  scroll-mt-28" id="faqs">
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="text-5xl text-[#8C25FF] font-bold text-center mb-6"
+        className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center mb-6"
       >
         Everything You Need to Know
       </motion.h2>
@@ -62,13 +62,13 @@ const FAQS = () => {
       {data.map((item) => (
         <div
           key={item.id}
-          className="mx-36 my-6 px-6 py-4 bg-[#8D27FF0D] rounded-2xl flex flex-col"
+          className=" md:my-6 my-3 py-3 px-3 md:px-6 md:py-4 bg-[#8D27FF0D] rounded-2xl flex flex-col"
         >
           <div
-            className="flex items-center justify-between cursor-pointer"
+            className="flex items-start justify-between cursor-pointer"
             onClick={() => toggle(item.id)}
           >
-            <h3 className="text-xl font-medium text-[#000000] mb-3">
+            <h3 className="md:text-xl sm:text-lg font-medium text-[#000000] mb-3">
               {item.question}
             </h3>
             {openId === item.id ? (
