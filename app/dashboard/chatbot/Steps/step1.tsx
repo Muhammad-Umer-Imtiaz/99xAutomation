@@ -235,11 +235,15 @@ export default function Step2Train({ formData, onChange }: any) {
                 <Image
                   src={formData.logo}
                   alt="logo"
+                  width={48}
+                  height={48}
+                  unoptimized 
                   className="w-12 h-12 object-cover rounded-full"
                 />
               ) : (
                 <div className="w-12 h-12 rounded-full bg-white" />
               )}
+
               <div>
                 <span className="text-white text-base font-semibold">
                   {formData.chatbotName || "Chat with bot"}

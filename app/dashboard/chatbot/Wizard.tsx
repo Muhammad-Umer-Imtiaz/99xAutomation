@@ -4,21 +4,41 @@ import React, { useState } from "react";
 import Step1 from "./Steps/step1";
 import Step2 from "./Steps/step2";
 import Step3 from "./Steps/step3";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import { useChatbotStore } from "@/Store/ChatbotStore";
+
+// --- Interface shared with Zustand store
+interface ChatbotData {
+  _id?: string;
+  chatbotName: string;
+  botType: "text" | "voice" | "both";
+  primaryColor: string;
+  secondaryColor: string;
+  position: "left" | "right";
+  logo: string;
+  tone: string;
+  language: string;
+  website_Url: string;
+  documents: string;
+  temperature: string;
+  maxToken: string;
+  LLM: string;
+  firstMessage: string;
+  systemPrompts: string;
+}
 
 export default function Wizard() {
   const [step, setStep] = useState(0);
+  const { createChatbot, isLoading } = useChatbotStore();
 
-  const [formData, setFormData] = useState({
-    // Step 1
+  const [formData, setFormData] = useState<ChatbotData>({
     chatbotName: "",
     botType: "both",
     primaryColor: "#8D27FF",
     secondaryColor: "#E9DBFF",
     position: "right",
     logo: "",
-    // Step 2
     tone: "",
     language: "",
     website_Url: "",
@@ -49,7 +69,7 @@ export default function Wizard() {
     },
   ];
 
-  // Validation rules
+  // ✅ Validation functions
   function validateStep1() {
     const required = [
       "chatbotName",
@@ -86,30 +106,20 @@ export default function Wizard() {
     return true;
   }
 
+  // ✅ Handle step 2 submission and chatbot creation
   async function handleStep2Submit() {
     if (!validateStep2()) return;
-    console.log("Form Data is ", formData);
-    toast.success("Form Submit successfully wait a second for embedded Script");
+
+    await toast.promise(createChatbot(formData), {
+      loading: "Creating chatbot...",
+      success: "Chatbot created successfully! 🎉",
+      error: "Failed to create chatbot ❌",
+    });
+
     setStep(2);
-    // try {
-    //   const res = await fetch("/api/chatbot/train", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(formData),
-    //   });
-
-    //   if (!res.ok) {
-    //     toast.error("Training failed ❌");
-    //     return;
-    //   }
-
-    //   toast.success("Training complete ✅");
-    //   setStep(2); // move to Step 3 after success
-    // } catch (err) {
-    //   toast.error("Something went wrong");
-    // }
   }
 
+  // ✅ Navigation handlers
   function handleNext() {
     if (step === 0) {
       if (validateStep1()) setStep(1);
@@ -126,7 +136,7 @@ export default function Wizard() {
     <div className="p-2">
       <Toaster position="top-right" />
 
-      {/* Step Indicator */}
+      {/* ✅ Step Indicator */}
       <div className="flex gap-3 mb-6">
         {steps.map((s, i) => {
           const isActive = step === i;
@@ -168,15 +178,18 @@ export default function Wizard() {
         })}
       </div>
 
-      {/* Step Content */}
+      {/* ✅ Step Content */}
       {steps[step].component}
 
-      {/* Navigation */}
+      {/* ✅ Navigation Buttons */}
       <div className="mt-10 flex items-center justify-center gap-4">
         {step > 0 && (
           <button
             onClick={prevStep}
-            className="px-10 py-2 text-xl bg-[#8D27FF] text-white rounded-full hover:bg-[#8645cf]"
+            disabled={isLoading}
+            className={`px-10 py-2 text-xl bg-[#8D27FF] text-white rounded-full hover:bg-[#8645cf] ${
+              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
             Back
           </button>
@@ -185,9 +198,20 @@ export default function Wizard() {
         {step < steps.length - 1 && (
           <button
             onClick={handleNext}
-            className="px-10 py-2 text-xl bg-[#8D27FF] text-white rounded-full hover:bg-[#8645cf] flex items-center gap-2"
+            disabled={isLoading}
+            className={`px-10 py-2 text-xl bg-[#8D27FF] text-white rounded-full hover:bg-[#8645cf] flex items-center gap-2 ${
+              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
-            {step === 1 ? "Train" : "Next"} <ArrowRight />
+            {isLoading ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" /> Processing...
+              </>
+            ) : (
+              <>
+                {step === 1 ? "Train" : "Next"} <ArrowRight />
+              </>
+            )}
           </button>
         )}
       </div>

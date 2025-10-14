@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className="relative flex pt-52  gap-12 lg:28px md:px-20 px-8"
+      className="relative flex pt-56 pb-12  gap-12 lg:28px md:px-28 px-8"
     >
       {/* <h2 className="lg:text-5xl md:text-xs sm:text-2xl text-xl">
         Hello World
@@ -54,13 +54,14 @@ const HeroSection = () => {
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        src="/heroSectionImage.png"
+        src="/heroSectionImage.gif"
         alt="Hero Section Image"
         width={600}
         height={300}
         className="hidden lg:flex rounded-lg ml-16"
         priority
       />
+
       <img
         src="/bgHero.png"
         alt="Background of hero Section"
