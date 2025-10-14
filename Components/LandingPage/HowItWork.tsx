@@ -55,7 +55,7 @@ const HowItWork = () => {
           <div
             key={step.number}
             className={`relative flex flex-col items-center ${
-              index === 1 ? "lg:-mt-30" : "lg:mt-36"
+              index === 1 ? "lg:-mt-52" : "lg:mt-36"
             }`}
           >
             {/* Step Card */}
@@ -64,10 +64,10 @@ const HowItWork = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="px-10 py-6 mx-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-8 z-10"
+              className="px-10 py-12 mx-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-8 z-10"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-[#8C25FF] text-white rounded-full mb-4 shadow-md">
-                <step.icon className="w-8 h-8" />
+              <div className="flex items-center justify-center w-20 h-20 bg-[#8C25FF] text-white rounded-full mb-4 shadow-md">
+                <step.icon className="w-12 h-12" />
               </div>
               <h3 className="text-2xl font-medium mb-2">{step.title}</h3>
               <p className="text-gray-700 text-center">{step.description}</p>
@@ -80,13 +80,13 @@ const HowItWork = () => {
                   <Image
                     src={ArrowRight}
                     alt="arrow right"
-                    className="hidden  lg:block absolute -top-10 left-54 translate-x-4 -translate-y-1/2 w-60 h-auto"
+                    className="hidden  lg:block absolute -top-12 left-54 translate-x-4 -translate-y-1/2 w-60 h-auto"
                   />
                 ) : (
                   <Image
                     src={ArrowDown}
                     alt="arrow down"
-                    className="hidden lg:block absolute top-10 -right-84 -translate-x-1/2 mt-2 w-60 h-auto"
+                    className="hidden lg:block absolute top-20 -right-84 -translate-x-1/2 mt-2 w-60 h-auto"
                   />
                 )}
               </div>

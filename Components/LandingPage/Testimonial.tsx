@@ -64,7 +64,7 @@ const Testimonial = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="text-3xl md:text-5xl text-[#8C25FF] font-bold text-center mb-6"
+        className="text-3xl md:text-5xl text-[#8C25FF] font-bold text-center mb-10"
       >
         What our clients say about 99X
       </motion.h2>
@@ -79,7 +79,7 @@ const Testimonial = () => {
               let bgColor, scale, opacity, zIndex, display;
               if (slot === -1) {
                 bgColor = "bg-[#C28CFF]";
-                scale = 0.8;
+                scale = 0.9;
                 opacity = 0.8;
                 zIndex = 1;
                 display = "hidden md:block";
@@ -91,7 +91,7 @@ const Testimonial = () => {
                 display = "block";
               } else {
                 bgColor = "bg-[#5A00BF]";
-                scale = 0.8;
+                scale = 0.9;
                 opacity = 0.8;
                 zIndex = 1;
                 display = "hidden md:block";
@@ -108,7 +108,12 @@ const Testimonial = () => {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5, ease: [0.42, 0, 0.58, 1] }}
                   className={`${bgColor} ${display} rounded-[30px] p-6 md:p-8 relative shadow-xl`}
-                  style={{ width: "100%", maxWidth: "400px", minHeight: "380px", zIndex }}
+                  style={{
+                    width: "100%",
+                    maxWidth: "400px",
+                    minHeight: "380px",
+                    zIndex,
+                  }}
                 >
                   {/* Avatar */}
                   <div className="absolute z-50 top-6 md:top-8 left-1/2 -translate-x-1/2">

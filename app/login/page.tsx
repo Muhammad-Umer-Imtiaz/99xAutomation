@@ -129,7 +129,7 @@ export default function LoginPage() {
           </div>
 
           {/* Social Login Buttons */}
-          <div className="flex items-center gap-3 justify-center">
+          <div className="flex items-center md:flex-row flex-col gap-3 justify-center">
             <button className="flex items-center gap-2 px-6 py-3 bg-white/90 hover:bg-white rounded-full shadow-md hover:shadow-md transition-all">
               <Facebook className="w-5 h-5 text-blue-600" />
               <span className="text-lg font-medium text-gray-700">
@@ -165,7 +165,7 @@ export default function LoginPage() {
 
         {/* ------------------- RIGHT SECTION (ANIMATED IMAGE) ------------------- */}
         <motion.div
-          className="flex-1 flex items-center justify-center"
+          className="flex-1 lg:flex hidden items-center justify-center"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}

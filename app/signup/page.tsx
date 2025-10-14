@@ -196,7 +196,7 @@ export default function SignupPage() {
 
         {/* ------------------- RIGHT SECTION (ANIMATED IMAGE) ------------------- */}
         <motion.div
-          className=" flex-1 flex items-center justify-center"
+          className=" flex-1 md:flex hidden items-center justify-center"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}

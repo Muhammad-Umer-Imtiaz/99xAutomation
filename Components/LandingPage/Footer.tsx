@@ -31,31 +31,44 @@ const Footer = () => {
       {/* Middle Section */}
       <div className="flex flex-col md:flex-row justify-between items-start py-10 text-sm">
         {/* Left side – Links (80%) */}
-        <ul className="md:w-9/12 w-full hidden md:grid grid-rows-7 lg:grid-col-4 grid-cols-2 gap-y-6 lg:gap-x-6 gap-x-2 md:pb-1 pb-8 md:border-b-0 border-b md:border-r border-white font-bold">
-          <li>Usefull Links</li>
-          <li>Home</li>
-          <li>Features</li>
-          <li>FAQS</li>
-          <li>Blogs</li>
-          <li>Contact</li>
-          <li>Companies</li>
-          <li>Why Choose us</li>
-          <li>Ai Tools Cover</li>
-          <li>Nuvora Ai</li>
-          <li>Ai Tool Radar</li>
-          <li>Find Ton</li>
-          <li>Munsit Ai</li>
-          <li>Ai Tools Hub</li>
-          <li>Industries</li>
-          <li>E-Commerce</li>
-          <li>Healthcare</li>
-          <li>Finance</li>
-          <li>Education</li>
-          <li>Real Estate</li>
-          <li>SaaS & Tech</li>
-          <li>Terms & Conditions</li>
-          <li>Privacy Policys</li>
-        </ul>
+        <div className="hidden md:flex w-full pr-4 md:w-9/12 justify-between flex-wrap gap-8 border-b md:border-b-0 md:border-r border-white/20 pb-8 md:pb-1 text-white font-medium">
+          <ul className="space-y-2">
+            <li className="text-lg font-bold mb-3">Useful Links</li>
+            <li>Home</li>
+            <li>Features</li>
+            <li>FAQs</li>
+            <li>Blogs</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+
+          <ul className="space-y-2">
+            <li className="text-lg font-bold mb-3">Companies</li>
+            <li>Why Choose Us</li>
+            <li>AI Tools Cover</li>
+            <li>Nuvora AI</li>
+            <li>AI Tool Radar</li>
+            <li>Find Ton</li>
+            <li>Munsit AI</li>
+            <li>AI Tools Hub</li>
+          </ul>
+
+          <ul className="space-y-2">
+            <li className="text-lg font-bold mb-3">Industries</li>
+            <li>E-Commerce</li>
+            <li>Healthcare</li>
+            <li>Finance</li>
+            <li>Education</li>
+            <li>Real Estate</li>
+            <li>SaaS & Tech</li>
+          </ul>
+
+          <ul className="space-y-2">
+            <li className="text-lg font-bold mb-3">Legal</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
 
         {/* Right side – Social links (20%) */}
         <div className="md:w-1/5 w-full flex flex-col gap-3 mt-4 items-start md:space-y-4 space-y-2 md:ml-10">
