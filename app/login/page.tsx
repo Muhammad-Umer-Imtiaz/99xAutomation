@@ -6,21 +6,45 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useAuthStore } from "@/Store/useAuthStore";
+import toast from "react-hot-toast";
+interface login {
+  email: string;
+  password: string;
+}
 
 export default function LoginPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<login>({
     email: "",
     password: "",
   });
   const router = useRouter();
-
+  const { login, isLoggingIn } = useAuthStore();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    console.log("Login submitted:", formData);
+  const handleSubmit = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+
+    const { email, password } = formData;
+
+    if (!email || !password) {
+      return toast.error("Please fill all fields");
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return toast.error("Invalid email format");
+    }
+
+    try {
+      await login(formData);
+      router.push("/dashboard");
+    } catch (err) {
+      toast.error("Login failed");
+    }
   };
 
   return (

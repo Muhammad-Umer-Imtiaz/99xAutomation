@@ -6,9 +6,18 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import toast from "react-hot-toast";
+import { useAuthStore } from "@/Store/useAuthStore";
+interface SignupData {
+  first_name: string;
+  last_name: string;
+  username: string;
+  email: string;
+  password: string;
+  confirm_password: string;
+}
 export default function SignupPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<SignupData>({
     first_name: "",
     last_name: "",
     username: "",
@@ -18,14 +27,47 @@ export default function SignupPage() {
   });
 
   const router = useRouter();
+  const { signup, isSigningUp } = useAuthStore();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    console.log("Signup submitted:", formData);
+  const handleSubmit = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+
+    const {
+      email,
+      password,
+      first_name,
+      last_name,
+      username,
+      confirm_password,
+    } = formData;
+
+    if (
+      !email ||
+      !password ||
+      !first_name ||
+      !last_name ||
+      !username ||
+      !confirm_password
+    ) {
+      return toast.error("Please fill all fields");
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return toast.error("Invalid email format");
+    }
+
+    try {
+      await signup(formData);
+      router.push("/dashboard");
+    } catch (err) {
+      toast.error("Login failed");
+    }
   };
 
   return (
