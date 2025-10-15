@@ -29,7 +29,12 @@ const Navbar = () => {
         className="h-16 sm:h-20 flex items-center justify-between bg-[#8D27FF] rounded-full text-white shadow-md px-4 sm:px-6 lg:px-10 my-4 sm:my-8 fixed z-20 w-[95%] sm:w-[90%] lg:w-[85%] left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-opacity-95"
       >
         {/* Logo */}
-        <div className="cursor-pointer flex items-center">
+        <div
+          className="cursor-pointer flex items-center"
+          onClick={() => {
+            router.push("/");
+          }}
+        >
           <Image
             src="/Logo.png"
             alt="Logo"

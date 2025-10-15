@@ -52,7 +52,7 @@ const ChatbotBuilder = () => {
   return (
     <div
       id="features"
-      className=" lg:mx-28 md:mx-16 mx-8 lg:my-20 space-y-10 scroll-mt-32"
+      className=" lg:mx-28 md:mx-16 mx-8 lg:my-20 my-14 md:space-y-10 space-y-4 scroll-mt-32"
     >
       <motion.h2
         initial={{ x: -100, opacity: 0 }}
@@ -63,7 +63,7 @@ const ChatbotBuilder = () => {
       >
         Everything You Need in One Chatbot Builder
       </motion.h2>
-      <p className="text-base text-[#000000] text-center mb-16">
+      <p className="text-base text-[#000000] text-center md:mb-16 mb-12">
         Personalize your bot, launch it anywhere, track results in real-time,
         and keep your business <br className="md:block hidden" />
         active 24/7 — all in one platform.

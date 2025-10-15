@@ -45,7 +45,7 @@ const HowItWork = () => {
         How it works
       </motion.h2>
 
-      <p className="text-base text-[#000000] text-center mb-20">
+      <p className="text-base text-[#000000] text-center md:mb-20 mb-10">
         Just 3 simple steps to launch your AI chatbot with 99X.
       </p>
 
@@ -64,7 +64,7 @@ const HowItWork = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="px-10 py-12 mx-6 shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-8 z-10"
+              className="md:px-10 md:py-12 md:mx-6 px-4 py-6  shadow-[0_0_25px_#8D27FF4D] rounded-3xl bg-white flex items-center flex-col space-y-8 z-10"
             >
               <div className="flex items-center justify-center w-20 h-20 bg-[#8C25FF] text-white rounded-full mb-4 shadow-md">
                 <step.icon className="w-12 h-12" />

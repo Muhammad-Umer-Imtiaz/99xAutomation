@@ -58,7 +58,7 @@ const WhyChoose = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
-              className="text-[#8C25FF] font-semibold lg:text-5xl md:text-3xl sm:text-2xl text-xl text-center lg:text-left"
+              className="text-[#8C25FF] font-semibold lg:text-5xl md:text-3xl sm:text-2xl text-2xl mb-2 text-center lg:text-left"
             >
               Why Choose 99x?
             </motion.h3>
@@ -68,7 +68,7 @@ const WhyChoose = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-[#000000] lg:text-base text-sm block text-center lg:text-left"
+              className="text-[#0000006b] lg:text-base text-sm block text-center lg:text-left mb-3"
             >
               Trusted AI automation to power conversations that matter.
             </motion.span>

@@ -48,12 +48,12 @@ const Industries = () => {
       heading: "Insurance",
       text: "Policy info, claims, and instant support.",
     },
-    {
-      id: 5,
-      icon: GraduationCap,
-      heading: "Education & E-Learning",
-      text: "Student support and course guidance.",
-    },
+    // {
+    //   id: 5,
+    //   icon: GraduationCap,
+    //   heading: "Education & E-Learning",
+    //   text: "Student support and course guidance.",
+    // },
     {
       id: 6,
       icon: Plane,
@@ -66,12 +66,12 @@ const Industries = () => {
       heading: "Real Estate",
       text: "Property listings, tours, and lead capture.",
     },
-    {
-      id: 8,
-      icon: Package,
-      heading: "Logistics & Supply Chain",
-      text: "Shipment tracking and delivery updates.",
-    },
+    // {
+    //   id: 8,
+    //   icon: Package,
+    //   heading: "Logistics & Supply Chain",
+    //   text: "Shipment tracking and delivery updates.",
+    // },
     // {
     //   id: 9,
     //   icon: Phone,
@@ -133,7 +133,7 @@ const Industries = () => {
         customer experiences.
       </p>
       {/* Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-y-14 gap-y-6">
         {data.map((item) => {
           const Icon = item.icon;
           return (

@@ -13,15 +13,21 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className=" lg:px-28 md:px-16 px-8 py-5 bg-[#8D27FF] text-white">
+    <div className=" lg:px-28 md:px-16 px-8 md:py-5 py-3 bg-[#8D27FF] text-white">
       {/* First Section */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between py-8 border-b-2 border-white">
-        <Image src="/Logo.png" alt="Logo Image" width={100} height={70} />
-        <div className="md:space-x-6 space-x-1 flex">
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-center py-8 border-b-2 border-white">
+        <Image
+          src="/Logo.png"
+          alt="Logo Image"
+          width={100}
+          height={70}
+          className="mb-2 md:mb-0"
+        />
+        <div className="md:space-x-6 space-x-1 flex items-center justify-evenly">
           <input
             type="text"
             placeholder="Email Address"
-            className="px-6 py-2 lg:w-80 md:w-60 w-48 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
+            className="px-6 py-2 lg:w-80 md:w-60 w-52 rounded-full outline-none shadow-lg bg-white text-black shadow-black/50 hover:shadow-black/90 "
           />
           <button className=" inline lg:px-8 px-4 py-2 sm:text-xl text-base rounded-full shadow-lg bg-white text-black  shadow-black/50 hover:shadow-black/90 transition">
             Subscribe
@@ -44,7 +50,6 @@ const Footer = () => {
 
           <ul className="space-y-2">
             <li className="text-lg font-bold mb-3">Companies</li>
-            <li>Why Choose Us</li>
             <li>AI Tools Cover</li>
             <li>Nuvora AI</li>
             <li>AI Tool Radar</li>

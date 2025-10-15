@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
-import { promises } from "dns";
 
 const BASE_URL = "http://localhost:8000";
 

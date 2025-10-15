@@ -10,7 +10,7 @@ const Testimonial = () => {
       id: 1,
       img: "/testimonial1.png",
       comment:
-        "We integrated 99X into our healthcare portal and it has completely transformed patient engagement. Appointment bookings are now smooth and effortless.",
+        "We integrated 99X into our healthcare portal and it has completely transformed patient engagement.",
       name: "Dr. James Turner",
       position: "CTO, MediCare Systems",
     },
@@ -40,7 +40,6 @@ const Testimonial = () => {
     },
   ];
 
-  // Generate 3 visible testimonials (left, center, right)
   const getVisibleTestimonials = () => {
     const visible = [];
     for (let i = -1; i <= 1; i++) {
@@ -50,14 +49,12 @@ const Testimonial = () => {
     return visible;
   };
 
-  const goToSlide = (index: React.SetStateAction<number>) => {
-    setCurrentIndex(index);
-  };
-
   const visibleTestimonials = getVisibleTestimonials();
 
+  const goToSlide = (index: number) => setCurrentIndex(index);
+
   return (
-    <div className="min-h-screen bg-white py-10 md:py-20 px-4 md:px-24">
+    <div className="min-h-screen bg-white py-10 md:py-20 px-4 md:px-24 flex flex-col justify-center">
       {/* Heading */}
       <motion.h2
         initial={{ y: -50, opacity: 0 }}
@@ -70,28 +67,28 @@ const Testimonial = () => {
       </motion.h2>
 
       {/* Testimonials */}
-      <div className="relative overflow-hidden md:overflow-visible">
-        <div className="flex items-center justify-center md:justify-between gap-2 mb-12 px-4">
+      <div className="relative overflow-hidden md:overflow-visible flex flex-col items-center">
+        <div className="flex items-end justify-center md:justify-between gap-6 mb-12 px-4">
           <AnimatePresence mode="popLayout">
             {visibleTestimonials.map((testimonial) => {
               const slot = testimonial.slot;
 
-              let bgColor, scale, opacity, zIndex, display;
+              let bgColor, height, opacity, zIndex, display;
               if (slot === -1) {
                 bgColor = "bg-[#C28CFF]";
-                scale = 0.9;
+                height = "380px";
                 opacity = 0.8;
                 zIndex = 1;
                 display = "hidden md:block";
               } else if (slot === 0) {
                 bgColor = "bg-[#8D27FF]";
-                scale = 1;
+                height = "430px"; // center one slightly taller
                 opacity = 1;
                 zIndex = 3;
                 display = "block";
               } else {
                 bgColor = "bg-[#5A00BF]";
-                scale = 0.9;
+                height = "380px";
                 opacity = 0.8;
                 zIndex = 1;
                 display = "hidden md:block";
@@ -100,25 +97,22 @@ const Testimonial = () => {
               return (
                 <motion.div
                   key={`${testimonial.id}-${slot}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{
-                    opacity,
-                    scale,
-                  }}
-                  exit={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, ease: [0.42, 0, 0.58, 1] }}
-                  className={`${bgColor} ${display} rounded-[30px] p-6 md:p-8 relative shadow-xl`}
+                  className={`${bgColor} ${display} rounded-[30px] p-6 md:p-8 relative shadow-xl flex flex-col justify-end`}
                   style={{
                     width: "100%",
                     maxWidth: "400px",
-                    minHeight: "380px",
+                    height,
                     zIndex,
                   }}
                 >
                   {/* Avatar */}
-                  <div className="absolute z-50 top-6 md:top-8 left-1/2 -translate-x-1/2">
+                  <div className="absolute z-50 top-20 md:top-14 left-1/2 -translate-x-1/2">
                     <div
-                      className={`w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-8 md:border-10 shadow-lg 
+                      className={`w-28 h-28 rounded-full overflow-hidden border-8 md:border-10 shadow-lg 
       ${
         slot === -1
           ? "border-[#C28CFF]"
@@ -136,13 +130,15 @@ const Testimonial = () => {
                   </div>
 
                   {/* White Box */}
-                  <div className="bg-white rounded-2xl p-6 md:p-8 mt-12 md:mt-16 relative min-h-[260px] md:min-h-[280px] flex flex-col justify-between">
-                    {/* Top Quote */}
-                    <div className="absolute -top-1 left-4 md:left-6 text-purple-200 text-5xl md:text-7xl font-serif opacity-30">
-                      "
+                  <div className="bg-white rounded-2xl p-6 md:p-8 mt-12 md:mt-16 relative flex flex-col justify-evenly min-h-[260px]">
+                    <div className="absolute -top-1 left-4 md:left-6 text-purple-200 text-8xl md:text-9xl  opacity-30">
+                      “
                     </div>
 
-                    <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-4 md:mb-6 relative z-10 text-center pt-6 md:pt-8">
+                    <p
+                      className="text-gray-800 text-sm md:text-base leading-relaxed mb-2 md:mb-6 
+             relative z-10 text-center pt-8 md:pt-12 line-clamp-3"
+                    >
                       {testimonial.comment}
                     </p>
 
@@ -155,9 +151,8 @@ const Testimonial = () => {
                       </p>
                     </div>
 
-                    {/* Bottom Quote */}
-                    <div className="absolute -bottom-3 md:-bottom-4 right-4 md:right-6 text-purple-200 text-5xl md:text-7xl font-serif opacity-30">
-                      "
+                    <div className="absolute -bottom-10 md:-bottom-16 right-4 md:right-6 text-purple-200 text-8xl md:text-9xl  opacity-30">
+                      ”
                     </div>
                   </div>
                 </motion.div>

@@ -46,7 +46,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
           viewport={{ amount: 0.3 }}
-          className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center lg:mb-16 md:mb-10 mb-8"
+          className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25ff] md:font-bold font-extrabold text-center lg:mb-16 md:mb-10 mb-8"
         >
           Companies and clients who trust 99X
         </motion.h2>
@@ -54,7 +54,7 @@ const About = () => {
           <motion.div
             className="flex gap-12"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           >
             {logos.concat(logos).map((logo, i) => (
               <img
@@ -88,7 +88,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
-              className="text-[#8C25FF] font-semibold lg:text-5xl md:text-4xl sm:text-3xl text-2xl"
+              className="text-[#8C25FF] font-semibold lg:text-5xl md:text-4xl sm:text-3xl text-2xl mb-3 md:mb-6"
             >
               About 99xAutomationAI
             </motion.h3>{" "}
@@ -112,7 +112,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
               viewport={{ once: true }}
-              className="text-[#000000] font-semibold sm:text-xl text-lg"
+              className="text-[#000000] font-semibold sm:text-xl text-base"
             >
               Create. Customize. Automate.
             </motion.h5>

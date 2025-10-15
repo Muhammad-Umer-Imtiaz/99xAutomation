@@ -49,7 +49,7 @@ const FAQS = () => {
 
   return (
     <div
-      className="md:py-10 py-3 lg:px-28 md:px-16 px-8  scroll-mt-28"
+      className="md:py-10 py-8 lg:px-28 md:px-16 px-8  scroll-mt-28"
       id="faqs"
     >
       <motion.h2
@@ -57,7 +57,7 @@ const FAQS = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.42, 0, 0.58, 1] }}
         viewport={{ amount: 0.3 }}
-        className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center mb-10"
+        className="lg:text-5xl md:text-3xl sm:text-2xl text-xl text-[#8C25FF] font-bold text-center md:mb-10 mb-6"
       >
         Everything You Need to Know
       </motion.h2>

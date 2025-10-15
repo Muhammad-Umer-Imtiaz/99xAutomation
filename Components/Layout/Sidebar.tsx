@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { Home, Bot, Settings, LogOut } from "lucide-react";
 
@@ -14,6 +14,7 @@ type TabEntry = {
 
 export const Sidebar = () => {
   const pathname = usePathname();
+  const router = useRouter();
 
   const tabs: TabEntry[] = useMemo(
     () => [
@@ -40,7 +41,12 @@ export const Sidebar = () => {
     <aside className="w-72 h-screen flex flex-col border-r-2 bg-[#ffffff]">
       {/* Header */}
       <div className="py-5 mx-auto cursor-pointer">
-        <div className="mx-auto my-1">
+        <div
+          className="mx-auto my-1"
+          onClick={() => {
+            router.push("/");
+          }}
+        >
           <Image
             src="/Logo.png"
             alt="Logo"
